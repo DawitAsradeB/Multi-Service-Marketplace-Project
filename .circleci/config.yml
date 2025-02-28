@@ -8,7 +8,12 @@ jobs:
       - image: cimg/node:16.8.0-browsers
     steps:
       - checkout
-      - run: echo "Running example step, please edit this file"
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm test
 
 workflows:
   test-flow:
